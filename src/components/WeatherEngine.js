@@ -66,7 +66,7 @@ const WeatherEngine = ({ location }) => {
             <button onClick={e => handleSearch(e)}>Search</button>
           </form>
         </div>
-      ) : //if loading is true then diplay "Loading" to the user
+      ) : //if loading is true then diplay "Loading" to the user //testing
       loading ? (
         <div style={{ color: "black" }}>Loading</div>
       ) : //if loading is false && error is true then display "There has been an error" to the user
