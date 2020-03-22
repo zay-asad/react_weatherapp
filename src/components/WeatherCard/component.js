@@ -5,7 +5,7 @@ import Location from "./Location";
 import Icon from "./Icon";
 import Condition from "../Condition";
 
-const WeatherCard = ({ temp, condition, city, country }) => {
+const WeatherCard = ({ temp, condition, humidity, city, country }) => {
   let highColor = 0;
   let lowColor = 0;
   let bg = null;
@@ -46,7 +46,7 @@ const WeatherCard = ({ temp, condition, city, country }) => {
     <Card>
       <Location city={city} country={country} />
       <Icon condition={condition} />
-      <Condition temp={temp} condition={condition} />
+      <Condition temp={temp} condition={condition} humidity={humidity} />
     </Card>
   );
 };

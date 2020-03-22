@@ -8,6 +8,7 @@ const WeatherEngine = ({ location }) => {
   const [loading, setLoading] = useState(false);
   const [weather, setWeather] = useState({
     temp: null,
+    humidity: null,
     city: null,
     condition: null,
     country: null
@@ -24,6 +25,7 @@ const WeatherEngine = ({ location }) => {
       const resJSON = await apiRes.json();
       setWeather({
         temp: resJSON.main.temp,
+        humidity: resJSON.main.humidity,
         city: resJSON.name,
         condition: resJSON.weather[0].main,
         country: resJSON.sys.country
@@ -52,6 +54,7 @@ const WeatherEngine = ({ location }) => {
         <div>
           <WeatherCard
             temp={weather.temp}
+            humidity={weather.humidity}
             condition={weather.condition}
             city={weather.city}
             country={weather.country}
