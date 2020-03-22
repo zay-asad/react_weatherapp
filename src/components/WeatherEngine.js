@@ -47,7 +47,7 @@ const WeatherEngine = ({ location }) => {
 
   //if both loading & error are false display the weathercard to the user
   return (
-    <div>
+    <table>
       {!loading && !error ? (
         <div>
           <WeatherCard
@@ -57,14 +57,14 @@ const WeatherEngine = ({ location }) => {
             country={weather.country}
           />
           {/*input box for search functionality */}
-          <form>
+          <td>
             <input
               style={{ color: "blue" }}
               value={query}
               onChange={e => setQuery(e.target.value)}
             />
             <button onClick={e => handleSearch(e)}>Search</button>
-          </form>
+          </td>
         </div>
       ) : //if loading is true then diplay "Loading" to the user //testing
       loading ? (
@@ -76,7 +76,7 @@ const WeatherEngine = ({ location }) => {
           <button onClick={() => setError(false)}>Reset!</button>
         </div>
       ) : null}
-    </div>
+    </table>
   );
 };
 
