@@ -9,6 +9,7 @@ const WeatherEngine = ({ location }) => {
   const [weather, setWeather] = useState({
     temp: null,
     humidity: null,
+    windspeed: null,
     city: null,
     condition: null,
     country: null
@@ -22,10 +23,12 @@ const WeatherEngine = ({ location }) => {
       const apiRes = await fetch(
         `http://api.openweathermap.org/data/2.5/weather?q=${q}&units=metric&APPID=deb5ffb1b2b09c8998ca8bdfeb8981bc`
       );
+      console.log(apiRes);
       const resJSON = await apiRes.json();
       setWeather({
         temp: resJSON.main.temp,
         humidity: resJSON.main.humidity,
+        windspeed: resJSON.wind.speed,
         city: resJSON.name,
         condition: resJSON.weather[0].main,
         country: resJSON.sys.country
@@ -55,6 +58,7 @@ const WeatherEngine = ({ location }) => {
           <WeatherCard
             temp={weather.temp}
             humidity={weather.humidity}
+            windspeed={weather.windspeed}
             condition={weather.condition}
             city={weather.city}
             country={weather.country}
