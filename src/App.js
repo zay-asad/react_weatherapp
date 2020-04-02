@@ -4,11 +4,9 @@ import "./App.css";
 import WeatherEngine from "./components/WeatherEngine";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Row";
 import { Navbar } from "react-bootstrap";
 import Help from "./components/WeatherCard/Help";
-import Spinner from 'react-bootstrap/Spinner';
-
+import Footer from "./components/WeatherCard/Footer";
 
 function App() {
   return (
@@ -29,7 +27,11 @@ function App() {
             <Help />
 
           </Row>
+          <div className="footer">
+            <Footer />
+          </div>
         </Container>
+
       </div>
     </div >
   );
