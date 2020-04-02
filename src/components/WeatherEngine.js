@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import WeatherCard from "./WeatherCard/component";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const WeatherEngine = ({ location }) => {
   //init for the state variables
@@ -55,14 +58,17 @@ const WeatherEngine = ({ location }) => {
     <table>
       {!loading && !error ? (
         <div>
-          <WeatherCard
-            temp={weather.temp}
-            humidity={weather.humidity}
-            windspeed={weather.windspeed}
-            condition={weather.condition}
-            city={weather.city}
-            country={weather.country}
-          />
+          <Row>
+            <WeatherCard
+              temp={weather.temp}
+              humidity={weather.humidity}
+              windspeed={weather.windspeed}
+              condition={weather.condition}
+              city={weather.city}
+              country={weather.country}
+            />
+          </Row>
+
           {/*input box for search functionality */}
           <td>
             <input
@@ -70,19 +76,19 @@ const WeatherEngine = ({ location }) => {
               value={query}
               onChange={e => setQuery(e.target.value)}
             />
-            <button onClick={e => handleSearch(e)}>Search</button>
+            <Button classname="d-inline-block" variant="primary" type="submit" onClick={e => handleSearch(e)}>Search</Button>
           </td>
         </div>
       ) : //if loading is true then diplay "Loading" to the user //testing
-      loading ? (
-        <div style={{ color: "black" }}>Loading</div> //loading
-      ) : //if loading is false && error is true then display "There has been an error" to the user
-      !loading && error ? (
-        <div style={{ color: "black" }}>
-          There has been an error!<br></br>
-          <button onClick={() => setError(false)}>Reset!</button>
-        </div>
-      ) : null}
+        loading ? (
+          <div style={{ color: "black" }}>Loading</div> //loading
+        ) : //if loading is false && error is true then display "There has been an error" to the user
+          !loading && error ? (
+            <div style={{ color: "black" }}>
+              There has been an error!<br></br>
+              <button onClick={() => setError(false)}>Reset!</button>
+            </div>
+          ) : null}
     </table>
   );
 };

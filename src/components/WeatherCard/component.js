@@ -38,10 +38,10 @@ const WeatherCard = ({
   }
 
   const Card = styled.div`
-    margin: 0 auto;
+    margin: 30 auto;
     background: ${bg};
-    width: 200px;
-    height: 230px;
+    width: 300px;
+    height: 320px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
