@@ -5,7 +5,14 @@ import Location from "./Location";
 import Icon from "./Icon";
 import Condition from "../Condition";
 
-const WeatherCard = ({ temp, condition, city, country }) => {
+const WeatherCard = ({
+  temp,
+  condition,
+  humidity,
+  windspeed,
+  city,
+  country
+}) => {
   let highColor = 0;
   let lowColor = 0;
   let bg = null;
@@ -31,10 +38,10 @@ const WeatherCard = ({ temp, condition, city, country }) => {
   }
 
   const Card = styled.div`
-    margin: 0 auto;
+    margin: 30 auto;
     background: ${bg};
-    width: 200px;
-    height: 240px;
+    width: 300px;
+    height: 320px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -46,7 +53,12 @@ const WeatherCard = ({ temp, condition, city, country }) => {
     <Card>
       <Location city={city} country={country} />
       <Icon condition={condition} />
-      <Condition temp={temp} condition={condition} />
+      <Condition
+        temp={temp}
+        condition={condition}
+        humidity={humidity}
+        windspeed={windspeed}
+      />
     </Card>
   );
 };

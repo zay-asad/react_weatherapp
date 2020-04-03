@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-const Icon = props => {
+const Icon = ({ condition }) => {
   const Icon = styled.img`
     width: 40%;
   `;
 
   var icon = "";
-  switch (props.condition) {
+  switch (condition) {
     case "Clear":
       icon = `./img/Mostly Sunny-2x.png`;
       break;

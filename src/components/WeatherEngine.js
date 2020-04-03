@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import WeatherCard from "./WeatherCard/component";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
 
 const WeatherEngine = ({ location }) => {
   //init for the state variables
@@ -8,6 +10,8 @@ const WeatherEngine = ({ location }) => {
   const [loading, setLoading] = useState(false);
   const [weather, setWeather] = useState({
     temp: null,
+    humidity: null,
+    windspeed: null,
     city: null,
     condition: null,
     country: null
@@ -21,9 +25,12 @@ const WeatherEngine = ({ location }) => {
       const apiRes = await fetch(
         `http://api.openweathermap.org/data/2.5/weather?q=${q}&units=metric&APPID=deb5ffb1b2b09c8998ca8bdfeb8981bc`
       );
+      console.log(apiRes);
       const resJSON = await apiRes.json();
       setWeather({
         temp: resJSON.main.temp,
+        humidity: resJSON.main.humidity,
+        windspeed: resJSON.wind.speed,
         city: resJSON.name,
         condition: resJSON.weather[0].main,
         country: resJSON.sys.country
@@ -47,36 +54,41 @@ const WeatherEngine = ({ location }) => {
 
   //if both loading & error are false display the weathercard to the user
   return (
-    <div>
+    <table>
       {!loading && !error ? (
         <div>
-          <WeatherCard
-            temp={weather.temp}
-            condition={weather.condition}
-            city={weather.city}
-            country={weather.country}
-          />
+          <Row>
+            <WeatherCard
+              temp={weather.temp}
+              humidity={weather.humidity}
+              windspeed={weather.windspeed}
+              condition={weather.condition}
+              city={weather.city}
+              country={weather.country}
+            />
+          </Row>
+
           {/*input box for search functionality */}
-          <form>
+          <td>
             <input
               style={{ color: "blue" }}
               value={query}
               onChange={e => setQuery(e.target.value)}
             />
-            <button onClick={e => handleSearch(e)}>Search</button>
-          </form>
+            <Button classname="d-inline-block" variant="primary" type="submit" onClick={e => handleSearch(e)}>Search</Button>
+          </td>
         </div>
       ) : //if loading is true then diplay "Loading" to the user //testing
-      loading ? (
-        <div style={{ color: "black" }}>Loading</div>
-      ) : //if loading is false && error is true then display "There has been an error" to the user
-      !loading && error ? (
-        <div style={{ color: "black" }}>
-          There has been an error!<br></br>
-          <button onClick={() => setError(false)}>Reset!</button>
-        </div>
-      ) : null}
-    </div>
+        loading ? (
+          <div style={{ color: "black" }}>Loading</div> //loading
+        ) : //if loading is false && error is true then display "There has been an error" to the user
+          !loading && error ? (
+            <div style={{ color: "black" }}>
+              There has been an error!<br></br>
+              <button onClick={() => setError(false)}>Reset!</button>
+            </div>
+          ) : null}
+    </table>
   );
 };
 
