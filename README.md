@@ -1,4 +1,10 @@
-    Copyright 2020 Traptech Labs
+    
+<h2>Authors</h2>
+<ul>
+<li><a href="https://github.com/zay-asad">Traptech Labs</a></li>
+</ul>    
+
+    Copyright © 2020 Traptech Labs
 
 ## Available Scripts
 
