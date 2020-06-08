@@ -69,13 +69,13 @@ const WeatherEngine = ({ location }) => {
           </Row>
 
           {/*input box for search functionality */}
-          <td>
+          <td className="styled-input">
             <input
               style={{ color: "blue" }}
               value={query}
               onChange={e => setQuery(e.target.value)}
             />
-            <Button classname="d-inline-block" variant="primary" type="submit" onClick={e => handleSearch(e)}>Search</Button>
+            <Button classname="d-inline-block" variant="info" size="sm" type="submit" onClick={e => handleSearch(e)}>Search</Button>
           </td>
         </div>
       ) : //if loading is true then diplay "Loading" to the user //testing

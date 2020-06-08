@@ -14,8 +14,9 @@ function App() {
       <div className="App">
         <Container fluid>
           <Navbar className="border-bottom" bg="transparent" expand="lg">
-            <Navbar.Brand>Traptech Labs</Navbar.Brand>
+            <Navbar.Brand className="ttl-nav">Traptech Labs</Navbar.Brand>
           </Navbar>
+          <br></br>
           <Row className="justify-content-md-center">
             <WeatherEngine location="sydney, au" />
           </Row>

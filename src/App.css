@@ -8,3 +8,13 @@
 .footer {
   color: black;
 }
+
+.ttl-nav {
+  font-size: 80px;
+}
+
+.styled-input {
+  padding: 20px;
+  font-size: 24;
+  text-align: center;
+}
