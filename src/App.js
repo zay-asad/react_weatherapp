@@ -27,26 +27,26 @@ function App() {
         <Navbar.Brand className="ttl-nav">Traptech Labs</Navbar.Brand>
       </Navbar>
       <br></br>
-      <Help />
       <Grid>
-        <Row xs="center">
-          <Col xs={12}>
+        <Title>Cool React Weather App ☂️</Title>
+        <Row center="xs">
+          <Col center="xs">
             <FormBox>
-              <Title>Weather App</Title>
+              <WeatherEngine location="sydney, au" />
             </FormBox>
           </Col>
-          <Col xs={12}>
-            <WeatherEngine location="sydney, au" />
-          </Col>
+          <br></br>
         </Row>
       </Grid>
 
-
+      <Row center="xs">
+        <Help />
+      </Row>
 
       <div className="footer">
         <Footer />
       </div>
-    </section>
+    </section >
   );
 }
 
