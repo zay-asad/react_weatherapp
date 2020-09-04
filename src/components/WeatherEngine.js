@@ -27,6 +27,7 @@ const WeatherEngine = ({ location }) => {
       );
       console.log(apiRes);
       const resJSON = await apiRes.json();
+      console.log(resJSON.weather[0]);
       setWeather({
         temp: resJSON.main.temp,
         humidity: resJSON.main.humidity,

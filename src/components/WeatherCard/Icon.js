@@ -9,40 +9,44 @@ const Icon = ({ condition }) => {
   var icon = "";
   switch (condition) {
     case "Clear":
-      icon = `/img/Mostly Sunny-2x.png`;
+      icon = `Mostly-Sunny-2x.png`;
       break;
     case "Clouds":
-      icon = `/img/Mostly Cloudy-2x.png`;
+      icon = `Mostly Cloudy-2x.png`;
       break;
     case "Haze":
-      icon = `/img/Haze-2x.png`;
+      icon = `Haze-2x.png`;
       break;
     case "Fog":
-      icon = `/img/Fog-2x.png`;
+      icon = `Fog-2x.png`;
       break;
     case "Tornado":
-      icon = `/img/Tornado-2x.png`;
+      icon = `Tornado-2x.png`;
       break;
     case "Dust":
-      icon = `/img/Dust-2x.png`;
+      icon = `Dust-2x.png`;
       break;
     case "Mist":
-      icon = `/img/Snow-2x.png`;
+      icon = `Snow-2x.png`;
       break;
     case "Rain":
-      icon = `/img/Rain-2x.png`;
+      icon = `Rain-2x.png`;
       break;
     case "Drizzle":
-      icon = `/img/Drizzle-2x.png`;
+      icon = `Drizzle-2x.png`;
       break;
     case "Thunderstorm":
-      icon = `/img/Severe Thunderstorm-2x.png`;
+      icon = `Severe Thunderstorm-2x.png`;
       break;
     default:
-      icon = "No image found";
+      icon = `Mostly-Sunny-2x.png`;
   }
 
-  return <Icon src={icon} alt="Weather Icon" />;
+  console.log(condition);
+
+  const logo = require('../../assets/images/' + icon);
+
+  return <Icon src={logo} alt="Weather Icon" />;
 };
 
 export default Icon;
