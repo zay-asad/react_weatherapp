@@ -5,7 +5,7 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 
 const popover = (
     <Popover id="popover-basic">
-        <Popover.Title as="h3">Weather Search</Popover.Title>
+        <Popover.Title as="h1">Weather Search</Popover.Title>
         <Popover.Content>
             Start by searching locations in the following format e.g. <strong>London,GB</strong>
         </Popover.Content>

@@ -1,40 +1,52 @@
 import React from "react";
 
 import "./App.css";
+import styled, { keyframes } from "styled-components";
 import WeatherEngine from "./components/WeatherEngine";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import { Navbar } from "react-bootstrap";
 import Help from "./components/WeatherCard/Help";
 import Footer from "./components/WeatherCard/Footer";
+import { Grid, Col, Row } from 'react-styled-flexboxgrid';
+
+export const Title = styled.h1`      
+    color: darkcyan;  
+    display: flex;
+    justify-content: center;
+    font-size: 1.9rem;
+    margin-top: 2px;
+`;
+
+export const FormBox = styled.form`
+    padding-top: 0.25rem;
+`;
 
 function App() {
   return (
-    <div className="Background">
-      <div className="App">
-        <Container fluid>
-          <Navbar className="border-bottom" bg="transparent" expand="lg">
-            <Navbar.Brand className="ttl-nav">Traptech Labs</Navbar.Brand>
-          </Navbar>
-          <br></br>
-          <Row className="justify-content-md-center">
+    <section className="App">
+      <Navbar className="border-bottom" bg="transparent" expand="lg">
+        <Navbar.Brand className="ttl-nav">Traptech Labs</Navbar.Brand>
+      </Navbar>
+      <br></br>
+      <Help />
+      <Grid>
+        <Row xs="center">
+          <Col xs={12}>
+            <FormBox>
+              <Title>Weather App</Title>
+            </FormBox>
+          </Col>
+          <Col xs={12}>
             <WeatherEngine location="sydney, au" />
-          </Row>
-          <Row className="justify-content-md-center">
-            <WeatherEngine location="sydney, au" />
-          </Row>
+          </Col>
+        </Row>
+      </Grid>
 
-          <Row>
-            <Help />
 
-          </Row>
-          <div className="footer">
-            <Footer />
-          </div>
-        </Container>
 
+      <div className="footer">
+        <Footer />
       </div>
-    </div >
+    </section>
   );
 }
 

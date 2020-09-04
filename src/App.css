@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather&display=swap");
 
 .App {
-  margin: 31px;
+  margin: 22px;
   color: white;
 }
 
@@ -10,11 +10,15 @@
 }
 
 .ttl-nav {
-  font-size: 80px;
+  font-size: 20px;
 }
 
 .styled-input {
-  padding: 20px;
-  font-size: 24;
+  padding-top: 20px;
+  font-size: 24px;
   text-align: center;
+}
+
+.styled-search {
+  padding-top: 10px;
 }

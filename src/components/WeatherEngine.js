@@ -75,7 +75,9 @@ const WeatherEngine = ({ location }) => {
               value={query}
               onChange={e => setQuery(e.target.value)}
             />
-            <Button classname="d-inline-block" variant="info" size="sm" type="submit" onClick={e => handleSearch(e)}>Search</Button>
+            <div className="styled-search">
+              <Button variant="primary" size="sm" block type="submit" onClick={e => handleSearch(e)}>Search</Button>
+            </div>
           </td>
         </div>
       ) : //if loading is true then diplay "Loading" to the user //testing
