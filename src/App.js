@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./App.css";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import WeatherEngine from "./components/WeatherEngine";
 import { Navbar } from "react-bootstrap";
 import Help from "./components/WeatherCard/Help";
@@ -28,7 +28,10 @@ function App() {
       </Navbar>
       <br></br>
       <Grid>
-        <Title>Cool React Weather App ☂️</Title>
+        <Title>
+          Cool React Weather App
+         <span role="img" aria-label="umbrella">☂️</span>
+        </Title>
         <Row center="xs">
           <Col center="xs">
             <FormBox>
@@ -42,10 +45,7 @@ function App() {
       <Row center="xs">
         <Help />
       </Row>
-
-      <div className="footer">
-        <Footer />
-      </div>
+      <Footer />
     </section >
   );
 }

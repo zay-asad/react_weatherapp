@@ -1,19 +1,29 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
+
+import { Grid, Col, Row } from 'react-styled-flexboxgrid';
+import styled from "styled-components";
+
+
+export const FooterStyled = styled.div`      
+  text-align: center;
+  margin-bottom: 1rem;
+  padding-top: 2.5rem;
+  color: black;
+`;
 
 function Footer() {
     return (
-        <footer className="footer" className="mt-5">
-            <Container fluid={true}>
-                <Row className="border-top justify-content-between p-3">
-                    <Col className="p-0 d-flex justify-content-end" md={0}>
-                        Copyright © 2020 Traptech Labs
-            </Col>
+        <FooterStyled>
+            <Grid>
+                <Row middle="md">
+
+                    <Col xs={12}>
+                        <br />
+                 Copyright © 2020 Traptech Labs
+          </Col>
                 </Row>
-            </Container>
-        </footer>
+            </Grid>
+        </FooterStyled>
     );
 }
 

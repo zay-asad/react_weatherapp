@@ -38,6 +38,8 @@ const Icon = ({ condition }) => {
     case "Thunderstorm":
       icon = `./img/Severe Thunderstorm-2x.png`;
       break;
+    default:
+      icon = "No image found";
   }
 
   return <Icon src={icon} alt="Weather Icon" />;
