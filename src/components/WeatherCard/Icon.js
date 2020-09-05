@@ -12,7 +12,7 @@ const Icon = ({ condition }) => {
       icon = `Mostly-Sunny-2x.png`;
       break;
     case "Clouds":
-      icon = `Mostly Cloudy-2x.png`;
+      icon = `Mostly-Cloudy-2x.png`;
       break;
     case "Haze":
       icon = `Haze-2x.png`;
@@ -36,7 +36,7 @@ const Icon = ({ condition }) => {
       icon = `Drizzle-2x.png`;
       break;
     case "Thunderstorm":
-      icon = `Severe Thunderstorm-2x.png`;
+      icon = `Severe-Thunderstorm-2x.png`;
       break;
     default:
       icon = `Mostly-Sunny-2x.png`;
